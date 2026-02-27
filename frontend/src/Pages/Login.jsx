@@ -45,7 +45,7 @@ export default function Login() {
             type="email"
             required
             value={email}
-            placeholder="admin@greenhouse.local"
+            placeholder="admin@smartgreenhouse.com"
             onChange={(e) => setEmail(e.target.value)}
           />
 

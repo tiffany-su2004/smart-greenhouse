@@ -1,7 +1,7 @@
 // frontend/src/services/api.js
 // Central API client (JWT + refresh token rotation)
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = "http://127.0.0.1:8000/api"; 
 
 function getAccessToken() {
   return localStorage.getItem("access_token");
@@ -55,6 +55,18 @@ async function refreshAccessToken() {
   })();
 
   return refreshPromise;
+}
+
+export async function registerUser(payload) {
+  const res = await fetch(`${API_BASE}/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data?.detail || data?.message || "Signup failed");
+  return data;
 }
 
 async function apiFetch(path, options = {}, retry = true) {

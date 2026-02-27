@@ -1,15 +1,17 @@
 // frontend/src/Pages/Analytics.jsx
 import { useEffect, useState } from "react";
-import Header from "../components/Header.jsx";
-import SensorCard from "../components/SensorCard.jsx";
-import TrendChart from "../Components/TrendChart.jsx";
+
+import Header from "../components/Header";
+import SensorCard from "../components/SensorCard";
+import TrendChart from "../components/TrendChart";
+
 import "../styles/dashboard.css";
 
 import {
   getSensorHistory,
   getNutrientUsage,
   getGrowthPhaseHistory
-} from "../services/api";
+} from "../services/api.js";
 
 export default function Analytics() {
   // -----------------------------

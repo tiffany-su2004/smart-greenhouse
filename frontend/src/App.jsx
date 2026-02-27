@@ -1,14 +1,14 @@
 // App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import ProtectedRoute from "./Components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-import Dashboard from "./Pages/Dashboard";
-import Control from "./Pages/Control";
-import Analytics from "./Pages/Analytics";
-import Settings from "./Pages/Settings";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Control from "./pages/Control";
+import Analytics from "./pages/Analytics";
+import Settings from "./pages/Settings";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 export default function App() {
     return (
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-       <Route
+<Route
   path="/dashboard"
   element={
     <ProtectedRoute>
@@ -27,7 +27,6 @@ export default function App() {
     </ProtectedRoute>
   }
 />
-
 <Route
   path="/control"
   element={

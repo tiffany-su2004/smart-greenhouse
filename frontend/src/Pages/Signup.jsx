@@ -32,7 +32,6 @@ export default function Signup() {
     if (form.password !== form.confirmPassword) return setError("Passwords do not match.");
 
     setError("");
-    alert("Account created (demo). Redirecting to login...");
     navigate("/login");
     };
 

@@ -1,17 +1,16 @@
 // frontend/src/Pages/Dashboard.jsx
+import { useState, useEffect, useMemo } from "react";
 
-import { useEffect, useMemo, useState } from "react";
 import Header from "../components/Header.jsx";
 import SensorCard from "../components/SensorCard.jsx";
-import TrendChart from "../Components/TrendChart.jsx";
-import "../styles/dashboard.css";
+import TrendChart from "../components/TrendChart.jsx";
 
 import {
   getLatestSensor,
   getSensorHistory,
   setDeviceControl,
   getAllDeviceControls   // ✅ ADD THIS
-} from "../services/api";
+} from "../services/api.js";
 
 
 export default function Dashboard() {

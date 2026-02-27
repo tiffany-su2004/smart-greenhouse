@@ -1,6 +1,6 @@
 // frontend/src/Pages/Control.jsx
 import { useEffect, useState } from "react";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header";
 import "../styles/control.css";
 
 import {
@@ -8,7 +8,7 @@ import {
   updateModeAndTargets,
   getSystemSettings,
   getAllDeviceControls
-} from "../services/api";
+} from "../services/api.js";
 
 export default function Control() {
   const [loading, setLoading] = useState(true);
