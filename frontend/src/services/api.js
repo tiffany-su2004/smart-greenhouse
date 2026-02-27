@@ -1,8 +1,7 @@
 // frontend/src/services/api.js
 // Central API client (JWT + refresh token rotation)
 
-const API_BASE = "http://127.0.0.1:8000/api"; 
-
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000") + "/api";
 function getAccessToken() {
   return localStorage.getItem("access_token");
 }
@@ -221,7 +220,7 @@ export async function updateMyAlertPreferences(payload) {
 // -------------------- DEVICES --------------------
 
 export async function listDevices() {
-  const res = await apiFetch("/devices", { method: "GET" });
+  const res = await apiFetch("/devices/", { method: "GET" });
   if (!res.ok) throw new Error("Failed to fetch devices");
   return res.json();
 }
@@ -248,7 +247,7 @@ export async function pairDevice(pair_code) {
 // -------------------- USERS (Admin) --------------------
 // ✅ NEW: list users
 export async function listUsers() {
-  const res = await apiFetch("/users", { method: "GET" });
+  const res = await apiFetch("/users/", { method: "GET" });
   if (!res.ok) throw new Error("Failed to fetch users");
   return res.json();
 }
